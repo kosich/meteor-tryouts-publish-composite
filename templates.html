@@ -1,0 +1,29 @@
+<head>
+  <title>meteor-mappings</title>
+</head>
+
+<body>
+    <h1>the killer app</h1>
+
+</body>
+
+<template name="layout">
+    {{> yield}}
+</template>
+
+<template name="item">
+    <h2>
+        {{ name }}
+    </h2>
+
+    {{ tag.name  }}
+</template>
+
+<template name="itemList">
+    {{#each items}}
+    <div>
+        name `<a href="{{pathFor 'item' data=this}}"><b>{{ name }}</b></a>'
+        of `<a href="{{pathFor 'tag' data=tagId }}">{{ tag.name }}</a>' tag
+    </div>
+    {{/each}}
+</template>
